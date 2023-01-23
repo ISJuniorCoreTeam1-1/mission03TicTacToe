@@ -16,7 +16,7 @@ namespace mission03TicTacToe
 
 
         // This is where we print the board
-        public void PrintBoard(string[] board)
+        public void PrintBoard(char[] board)
         {
 
 
@@ -40,7 +40,7 @@ namespace mission03TicTacToe
 
 
         //This is the class that allows us to check for a winner
-        public int Winner(string[] board)
+        public int Winner(char[] board)
         {
 
             //Default noone has won yet.
