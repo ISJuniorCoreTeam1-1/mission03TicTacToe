@@ -29,7 +29,7 @@ namespace mission03TicTacToe
                     board[i] = 'X';
                 }
             }
-            if (myGame.Winner() == 0){
+            if (myGame.Winner(board) == 0){
                 for (int i = 0; i < 4; i++)
                 {
                     myGame.PrintBoard(board);
@@ -37,11 +37,11 @@ namespace mission03TicTacToe
                     //Read In User Entry and update the array
                     str = Console.ReadLine();
                     selectedValue = str;
-                    for (int i = 0; i < board.Length; i++)
+                    for (int j = 0; j < board.Length; j++)
                     {
-                        if (board[i].ToString() == str)
+                        if (board[j].ToString() == str)
                         {
-                            board[i] = 'O';
+                            board[j] = 'O';
                         }
                     }
                 }
@@ -53,18 +53,18 @@ namespace mission03TicTacToe
                     //Read In User Entry and update the array
                     str = Console.ReadLine();
                     selectedValue = str;
-                    for (int i = 0; i < board.Length; i++)
+                    for (int k = 0; k < board.Length; k++)
                     {
-                        if (board[i].ToString() == str)
+                        if (board[k].ToString() == str)
                         {
-                            board[i] = 'X';
+                            board[k] = 'X';
                         }
                     }
                 }
             }
             else
             {
-                Console.WriteLine(myGame.Winner);
+                Console.WriteLine(myGame.Winner(board));
             }
             
         }
