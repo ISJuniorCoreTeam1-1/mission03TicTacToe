@@ -10,11 +10,15 @@ namespace mission03TicTacToe
 
             //Create a new Game
             Supporting myGame = new Supporting();
+
             //This is the array for the board to store answers, Spots 1-9 correlate with nine spots on board
             char[] board = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
             //Welcome user to the game
             Console.WriteLine("Welcome to Tic-Tac-Toe!");
             Console.WriteLine("\n");
+
+            //Print out initial board and prompt for first turn by player 1
             string selectedValue = "";
             string str = "";
             myGame.PrintBoard(board);
@@ -29,8 +33,9 @@ namespace mission03TicTacToe
                     board[i] = 'X';
                 }
             }
-            if (myGame.Winner(board) == 0){
-                for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
+            {
+                if (myGame.Winner(board) == 0)
                 {
                     myGame.PrintBoard(board);
                     Console.WriteLine("Player 2: It's your turn. Enter the number on the board to place your X");
@@ -44,10 +49,6 @@ namespace mission03TicTacToe
                             board[j] = 'O';
                         }
                     }
-                }
-
-                for (int i = 0; i < 4; i++)
-                {
                     myGame.PrintBoard(board);
                     Console.WriteLine("Player 1: It's your turn. Enter the number on the board to place your X");
                     //Read In User Entry and update the array
@@ -60,13 +61,19 @@ namespace mission03TicTacToe
                             board[k] = 'X';
                         }
                     }
+            
                 }
+            }
+            myGame.PrintBoard(board);
+            
+            if (myGame.Winner(board) == 0)
+            {
+                Console.WriteLine("It's a draw!");
             }
             else
             {
-                Console.WriteLine(myGame.Winner(board));
+                Console.WriteLine("Player " + myGame.Winner(board) + " won the game!");
             }
-            
         }
     }
 }
