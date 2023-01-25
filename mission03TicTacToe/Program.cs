@@ -49,16 +49,20 @@ namespace mission03TicTacToe
                             board[j] = 'O';
                         }
                     }
-                    myGame.PrintBoard(board);
-                    Console.WriteLine("Player 1: It's your turn. Enter the number on the board to place your X");
-                    //Read In User Entry and update the array
-                    str = Console.ReadLine();
-                    selectedValue = str;
-                    for (int k = 0; k < board.Length; k++)
+                    if (myGame.Winner(board) == 0)
                     {
-                        if (board[k].ToString() == str)
+
+                        myGame.PrintBoard(board);
+                        Console.WriteLine("Player 1: It's your turn. Enter the number on the board to place your X");
+                        //Read In User Entry and update the array
+                        str = Console.ReadLine();
+                        selectedValue = str;
+                        for (int k = 0; k < board.Length; k++)
                         {
-                            board[k] = 'X';
+                            if (board[k].ToString() == str)
+                            {
+                                board[k] = 'X';
+                            }
                         }
                     }
             
