@@ -22,15 +22,15 @@ namespace mission03TicTacToe
 
             //Tic-Tac-Toe board. Players will type in which spot they want their X or O in (1-9)
             //It will store it in board array and change what spot they chose to either X or O
-            Console.WriteLine("    |    |    ");
-            Console.WriteLine("{0}   | {1}  | {2} ", board[1], board[2], board[3]);
-            Console.WriteLine("____|____|____");
-            Console.WriteLine("    |    |    ");
-            Console.WriteLine("{0}   | {1}  | {2} ", board[4], board[5], board[6]);
-            Console.WriteLine("____|____|____");
-            Console.WriteLine("    |    |    ");
-            Console.WriteLine("{0}   | {1}  | {2} ", board[7], board[8], board[9]);
-            Console.WriteLine("    |    |    ");
+            Console.WriteLine("     |    |    ");
+            Console.WriteLine(" {0}   | {1}  | {2} ", board[1], board[2], board[3]);
+            Console.WriteLine(" ____|____|____");
+            Console.WriteLine("     |    |    ");
+            Console.WriteLine(" {0}   | {1}  | {2} ", board[4], board[5], board[6]);
+            Console.WriteLine(" ____|____|____");
+            Console.WriteLine("     |    |    ");
+            Console.WriteLine(" {0}   | {1}  | {2} ", board[7], board[8], board[9]);
+            Console.WriteLine("     |    |    ");
         }
 
 
@@ -54,17 +54,124 @@ namespace mission03TicTacToe
 
                 if(board[1] == 'X')
                 {
-                    //Player one X's won
                     whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
                 }
             }
 
-            //Is there a vertical win?
+            else if (board[4] == board[5] & board[4] == board[6])
+            {
+                //someone won!
 
-            
+                if (board[4] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+            else if (board[7] == board[8] & board[7] == board[9])
+            {
+                //someone won!
+
+                if (board[7] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+
+            //Vertical check if statements 
+            if (board[1] == board[4] & board[1] == board[7])
+            {
+                //someone won!
+
+                if (board[1] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+            else if (board[2] == board[5] & board[2] == board[8])
+            {
+                //someone won!
+
+                if (board[2] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+            else if (board[3] == board[6] & board[3] == board[9])
+            {
+                //someone won!
+
+                if (board[3] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+
             //Is there a diagonal win?
+            if (board[1] == board[5] & board[1] == board[9])
+            {
+                //someone won!
 
-            
+                if (board[1] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+            else if (board[3] == board[5] & board[3] == board[7])
+            {
+                //someone won!
+
+                if (board[3] == 'X')
+                {
+                    //Player one X's won
+                    whoWon = 1;
+                }
+                else
+                {
+                    whoWon = 2;
+                }
+            }
+
+
 
 
             return whoWon;
